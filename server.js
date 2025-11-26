@@ -19,6 +19,8 @@ const supabase = createClient(
     process.env.SUPABASE_SERVICE_KEY
 )
 
+const PORT = process.env.PORT || 3001
+
 const SECRET_KEY = process.env.JWT_SECRET;
 console.log(SECRET_KEY)
 
@@ -352,4 +354,4 @@ app.delete('/delete-cart/:id', async (req, res) => {
 })
 
 
-app.listen(3001, () => console.log("Server running on http://0.0.0.0:3001"));
+app.listen(PORT, () => console.log(`Server running on http://0.0.0.0:${PORT}`));
